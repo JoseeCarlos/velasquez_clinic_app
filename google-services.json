@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "574851944745",
+    "project_id": "clinica-velasquez-app",
+    "storage_bucket": "clinica-velasquez-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574851944745:android:87989e9e68574ddb686738",
+        "android_client_info": {
+          "package_name": "com.velasquez.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574851944745-q91sqfrslm1afbtru7n6gcbvjss4ssmk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL99sRLkAxC0vl-8Uv027xixU_BhDGJjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574851944745-q91sqfrslm1afbtru7n6gcbvjss4ssmk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

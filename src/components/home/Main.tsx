@@ -30,8 +30,6 @@ interface Appointment {
 }
 
 function HomeScreen({ navigation }: { navigation: any }) {
-  const username = "Juan";
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

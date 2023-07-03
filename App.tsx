@@ -13,12 +13,15 @@ import News from "./src/components/news/News";
 import Treatment from "./src/components/treatments/Main";
 import PaymentHistoryScreen from "./src/components/payments/Home";
 import AboutScreen from "./src/components/About/Main";
+import { Provider } from "react-redux";
 import AppointmentDetails from "./src/components/appointmentDetails/Main";
+import store from "./src/store/store";
 
 const Stack = createStackNavigator();
 
 export default function App(): JSX.Element {
-  const [isSplashAnimationFinished, setIsSplashAnimationFinished] = useState(false);
+  const [isSplashAnimationFinished, setIsSplashAnimationFinished] =
+    useState(false);
   const [isAppReady, setIsAppReady] = useState(false);
 
   useEffect(() => {
@@ -46,25 +49,62 @@ export default function App(): JSX.Element {
       {!isAppReady && <SplashScreen />}
 
       {isAppReady && (
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="Login">
-            <Stack.Screen name="Login" component={Main} options={{ headerShown: false }} />
-            <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="News" component={News} options={{ headerShown: false }} />
-            <Stack.Screen name="Treatments" component={Treatment} options={{ headerShown: false }} />
-            <Stack.Screen
-              name="PaymentHistory"
-              component={PaymentHistoryScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen name="Home" component={MainScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Profile" component={Main} options={{ headerShown: false }} />
-            <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false }} />
-            <Stack.Screen name="About" component={AboutScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Notification" component={Notification} options={{ headerShown: false }} />
-            
-          </Stack.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName="Login">
+              <Stack.Screen
+                name="Login"
+                component={Main}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Signup"
+                component={SignupScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="News"
+                component={News}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Treatments"
+                component={Treatment}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="PaymentHistory"
+                component={PaymentHistoryScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Home"
+                component={MainScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Profile"
+                component={Main}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="EditProfile"
+                component={EditProfile}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="About"
+                component={AboutScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Notification"
+                component={Notification}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </Provider>
       )}
     </View>
   );
